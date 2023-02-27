@@ -3,10 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>E-commerce page</title>
 </head>
 <body>
     
+  <nav>
+    <img class="iconMenu" src="./assets/icon-menu.svg" alt="">
+    <div class="mobile-menu inactive">
+      <ul>
+        <img class="iconClose" src="./assets/icon-close.svg" alt="">
+        <li>
+          <a href="/">Collections</a>
+        </li>
+        <li>
+          <a href="/">Men</a>
+        </li>
+        <li>
+          <a href="/">Women</a>
+        </li>
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/">Contact</a>
+        </li>
+    </div>
+
+    <div class="navbar-left">
+      <img src="./assets/logo.svg" alt="logo" class="logo">
+
+      <ul>
+        <li>
+          <a href="/">Collections</a>
+        </li>
+        <li>
+          <a href="/">Men</a>
+        </li>
+        <li>
+          <a href="/">Women</a>
+        </li>
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-right">
+
+      <ul>
+        <li class="navbar-shopping-cart">
+          <img src="./assets/icon-cart.svg" alt="shopping cart">
+          <div>2</div>
+        </li>
+        <li class="user-icon">
+            <img src="./assets/image-avatar.png" alt="shopping cart">
+          </li>
+      </ul>
+    </div>
+
+   
+  </nav>
+      <div class="my-order-container  inactive">
+        <h1 class="title">Cart</h1>
+  
+        <div class="my-order-content">
+          <div class="order">
+            <figure>
+              <img class="img-product-cart" src="./assets/image-product-1-thumbnail.jpg" alt="">
+            </figure>
+            <div class="info-item-container">
+            <p>
+              Fall Limited Edition sneaker
+            </p>
+            <div class="value-items">
+            <span>$125.00</span>
+            <span>X 3</span>
+            <p>$375.00</p>
+            </div>
+          </div>
+            <img class="delete-icon" src="./assets/icon-delete.svg" alt="arrow">
+          </div>
+
+          <button  class="checkout-button">Checkout</button>
+  
+        </div>
+      </div>
+      <section class="main-container">
+        <div class="cards-container">
+    
+          <!-- <div class="product-card">
+            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+            <div class="product-info">
+              <div>
+                <p>$120,00</p>
+                <p>Bike</p>
+              </div>
+              <figure>
+                <img src="./icons/bt_add_to_cart.svg" alt="">
+              </figure>
+            </div>
+          </div> -->
+        </div>
+      </section>
+      <script src="./main.js"></script>
 </body>
 </html>
