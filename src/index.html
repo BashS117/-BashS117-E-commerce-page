@@ -59,7 +59,7 @@
       <ul>
         <li class="navbar-shopping-cart">
           <img src="./assets/icon-cart.svg" alt="shopping cart">
-          <div>2</div>
+          <!-- <div>2</div> -->
         </li>
         <li class="user-icon">
             <img src="./assets/image-avatar.png" alt="shopping cart">
@@ -71,46 +71,114 @@
   </nav>
       <div class="my-order-container  inactive">
         <h1 class="title">Cart</h1>
-  
+
         <div class="my-order-content">
+
+          <p class="cartEmpty"> Your cart is empty</p>
+      </div>
+
+
+  
+        <!-- <div class="my-order-content">
           <div class="order">
             <figure>
               <img class="img-product-cart" src="./assets/image-product-1-thumbnail.jpg" alt="">
             </figure>
             <div class="info-item-container">
-            <p>
-              Fall Limited Edition sneaker
-            </p>
-            <div class="value-items">
-            <span>$125.00</span>
-            <span>X 3</span>
-            <p>$375.00</p>
+              <p>
+                Fall Limited Edition sneaker
+              </p>
+              <div class="value-items">
+                <span>$125.00</span>
+                <span>X 3</span>
+                <p>$375.00</p>
+              </div>
             </div>
-          </div>
             <img class="delete-icon" src="./assets/icon-delete.svg" alt="arrow">
           </div>
+        
+          <button class="checkout-button">Checkout</button>
+        
+        </div> -->
 
-          <button  class="checkout-button">Checkout</button>
-  
-        </div>
+
       </div>
-      <section class="main-container">
+
+      <section class="main-container ">
         <div class="cards-container">
     
           <!-- <div class="product-card">
-            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-            <div class="product-info">
-              <div>
-                <p>$120,00</p>
-                <p>Bike</p>
-              </div>
-              <figure>
-                <img src="./icons/bt_add_to_cart.svg" alt="">
-              </figure>
-            </div>
+  
           </div> -->
         </div>
       </section>
+
+
+      <aside class="product-detail  inactive">
+        <div class="product-visualitation">
+       
+        <img src="./assets/image-product-1.jpg" alt="bike">
+        <div class="product-images-container">
+          <img src="./assets/image-product-1-thumbnail.jpg" alt="">
+          <img src="./assets/image-product-2-thumbnail.jpg" alt="">
+          <img src="./assets/image-product-3-thumbnail.jpg" alt="">
+          <img src="./assets/image-product-4-thumbnail.jpg" alt="">
+
+        </div>
+      </div>
+        <div class="product-description">  
+          <h1>SNEAKER COMPANY</h1> 
+          <h2>Fall Limited Edition Sneakers</h2> 
+          <p class="text-description">These low-profile sneakers are you perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+          <div class="final-price">
+            <span>$125.00</span>
+            <span>50%</span>
+          </div>
+          
+          <p>$250.00</p>
+
+          <section class="section-add-to-cart" >
+            <div class="plus-less-button-container">
+              <button class="plus-less-button less-b">-</button>
+              <p class="amountItem"></p>
+              <button class="plus-less-button pluss-b">+</button>
+
+            </div>
+            
+            <button class="primary-button add-to-cart-button">
+
+
+              
+              <img  class="img brightness" src="./assets/icon-cart.svg" />
+     
+              Add to cart
+            </button>
+            
+          </section>
+          
+        </div>
+
+
+        <div class="img-visualitation-zoom">
+          <div class="img-Container">   
+               <img src="./assets/image-product-1.jpg" alt="bike">
+              
+              </div>
+       
+          <div class="product-images-container">
+            <img src="./assets/image-product-1-thumbnail.jpg" alt="">
+            <img src="./assets/image-product-2-thumbnail.jpg" alt="">
+            <img src="./assets/image-product-3-thumbnail.jpg" alt="">
+            <img src="./assets/image-product-4-thumbnail.jpg" alt="">
+  
+          </div>
+        </div>
+
+
+      </aside>
+
+
+
       <script src="./main.js"></script>
 </body>
 </html>
