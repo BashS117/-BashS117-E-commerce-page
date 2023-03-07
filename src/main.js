@@ -14,6 +14,81 @@ const addtoCartButton=document.querySelector(".add-to-cart-button");
 const shoppingCartIcon=document.querySelector(".navbar-shopping-cart");
 const myOrderContent=document.querySelector(".my-order-content");
 const deleteItemCart=document.querySelector(".delete-icon");
+const mainImg=document.querySelector(".main-img");
+const thumbnail=document.querySelectorAll(".thumbnails");
+const next = document.querySelector(".control-rigth");
+const previous= document.querySelector(".control-left");
+const closeIcon=document.querySelector(".close-icon");
+const imgBut=document.querySelectorAll(".img-product-button");
+const asideImgZoom=document.querySelector(".img-visualitation-zoom");
+const backBlack=document.querySelector(".back-background");
+
+imgBut.forEach( button=>{
+    button.addEventListener("click",function(){
+
+asideImgZoom.classList.remove("inactive");
+backBlack.classList.remove("inactive")
+
+
+    })
+
+})
+
+
+closeIcon.addEventListener("click", function(){
+    asideImgZoom.classList.add("inactive");
+    backBlack.classList.add("inactive");
+})
+let index=0;
+
+const mount = ()=> thumbnail[index].classList.add("active");
+const unmount = ()=>thumbnail[index].classList.remove("active");
+
+
+next.addEventListener("click", ()=>{
+    unmount();
+
+    if(index>=thumbnail.length-1){
+        index= 0;
+        mainImg.src=thumbnail[index].src;
+
+    }
+    else{
+       index++;
+       mainImg.src=thumbnail[index].src;
+    }
+    
+
+mount();
+
+})
+
+previous.addEventListener("click", ()=>{
+    unmount();
+    if(index<=0){
+        index= thumbnail.length-1;
+        mainImg.src=thumbnail[index].src;
+
+    }
+    else{
+       index--;
+       mainImg.src=thumbnail[index].src;
+    }
+    
+
+mount();
+
+})
+
+
+thumbnail.forEach(thumb=>{
+    thumb.addEventListener("click", function(){
+        let imgActive= document.querySelector(".active");
+        imgActive.classList.remove("active");
+        this.classList.add("active");
+        mainImg.src=this.src
+    })
+})
 
 let Amount=0;
 
