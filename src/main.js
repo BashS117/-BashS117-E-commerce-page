@@ -3,8 +3,6 @@ const cartItems = document.querySelector(".my-order-container");
 const iconMenu = document.querySelector(".iconMenu");
 const mobileMenu = document.querySelector(".mobile-menu");
 const iconClose = document.querySelector(".iconClose");
-const cardsContainer = document.querySelector('.cards-container');
-const productCard = document.querySelector(".product-card");
 const productDetail=document.querySelector(".product-detail");
 const plussButton=document.querySelector(".pluss-b");
 const lessButton=document.querySelector(".less-b");
@@ -15,9 +13,16 @@ const shoppingCartIcon=document.querySelector(".navbar-shopping-cart");
 const myOrderContent=document.querySelector(".my-order-content");
 const deleteItemCart=document.querySelector(".delete-icon");
 const mainImg=document.querySelector(".main-img");
+const mainImgDesk=document.querySelector(".main-img-desk");
+
+const thumbNailContainer= document.querySelectorAll(".thumbnail-container");
 const thumbnail=document.querySelectorAll(".thumbnails");
 const next = document.querySelector(".control-rigth");
+const nextDesk = document.querySelector(".control-rigth-desk");
+
 const previous= document.querySelector(".control-left");
+const previousDesk= document.querySelector(".control-left-desk");
+
 const closeIcon=document.querySelector(".close-icon");
 const imgBut=document.querySelectorAll(".img-product-button");
 const asideImgZoom=document.querySelector(".img-visualitation-zoom");
@@ -41,12 +46,16 @@ closeIcon.addEventListener("click", function(){
 })
 let index=0;
 
+const mountthumbselect=()=>thumbNailContainer[index].classList.add("border");
+const unmountthumbselect = ()=>thumbNailContainer[index].classList.remove("border");
+
 const mount = ()=> thumbnail[index].classList.add("active");
 const unmount = ()=>thumbnail[index].classList.remove("active");
 
 
 next.addEventListener("click", ()=>{
     unmount();
+    unmountthumbselect();
 
     if(index>=thumbnail.length-1){
         index= 0;
@@ -60,11 +69,32 @@ next.addEventListener("click", ()=>{
     
 
 mount();
+mountthumbselect();
+})
 
+nextDesk.addEventListener("click",()=>{
+    unmount();
+    unmountthumbselect();
+    
+    if(index>=thumbnail.length-1){
+        index= 0;
+        mainImgDesk.src=thumbnail[index].src;
+
+    }
+    else{
+       index++;
+       mainImgDesk.src=thumbnail[index].src;
+    }
+    
+
+mount();
+mountthumbselect();
 })
 
 previous.addEventListener("click", ()=>{
     unmount();
+    unmountthumbselect();
+
     if(index<=0){
         index= thumbnail.length-1;
         mainImg.src=thumbnail[index].src;
@@ -77,6 +107,29 @@ previous.addEventListener("click", ()=>{
     
 
 mount();
+mountthumbselect();
+
+
+})
+
+previousDesk.addEventListener("click", ()=>{
+    unmount();
+    unmountthumbselect();
+
+    if(index<=0){
+        index= thumbnail.length-1;
+        mainImgDesk.src=thumbnail[index].src;
+
+    }
+    else{
+       index--;
+       mainImgDesk.src=thumbnail[index].src;
+    }
+    
+
+mount();
+mountthumbselect();
+
 
 })
 
@@ -87,6 +140,16 @@ thumbnail.forEach(thumb=>{
         imgActive.classList.remove("active");
         this.classList.add("active");
         mainImg.src=this.src
+        mainImgDesk.src=this.src
+    })
+})
+
+thumbNailContainer.forEach(thumbNailCont=>{
+    thumbNailCont.addEventListener("click",function(){
+        let borderActive=document.querySelector(".border");
+        borderActive.classList.remove("border");
+        this.classList.add("border");
+        
     })
 })
 
@@ -184,86 +247,4 @@ function closeMobileMenu(){
 }
 
 
-cardsContainer.addEventListener("click", (event)=>{
-    if(event.target.nodeName==="IMG"){
 
-    productDetail.classList.remove("inactive");
-    cardsContainer.classList.add("inactive");
-    amountItem.innerHTML= Amount;
-   
-    }   
-});
-
-const productList = [];
-
-productList.push({
-    
-    name: "Bike",
-    price: 120,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-})
-
-productList.push({
-    
-    name: "Pantalla",
-    price: 120,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-})
-
-productList.push({
-    
-    name: "computador",
-    price: 120,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-})
-
-// <!-- <div class="product-card">
-//             <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-//             <div class="product-info">
-//               <div>
-//                 <p>$120,00</p>
-//                 <p>Bike</p>
-//               </div>
-//               <figure>
-//                 <img src="./icons/bt_add_to_cart.svg" alt="">
-//               </figure>
-//             </div>
-//           </div> -->
-
-function renderProducts(arr){
-    for (product of arr){
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card')
-    
-        const  productImg = document.createElement('img');
-        productImg.setAttribute('src', product.image)
-    
-        const productInfo = document.createElement('div');
-        productInfo.classList.add('product-info');
-    
-        const productInfoDiv = document.createElement('div');
-    
-        const productPrice = document.createElement('p');
-        productPrice.innerText = '$' + product.price;
-        const productName = document.createElement('p');
-        productName.innerText = product.name;
-    
-        productInfoDiv.append(productPrice, productName);
-    
-    
-        const productInfoFigure = document.createElement('figure');
-        const productImgCart = document.createElement('img');
-        productImgCart.setAttribute('src', './assets/add-to-cart.svg')
-    
-        productInfoFigure.appendChild(productImgCart);
-    
-        productInfo.append(productInfoDiv);
-        productInfo.append(productInfoFigure);
-    
-        productCard.append(productImg, productInfo);
-    
-        cardsContainer.appendChild(productCard);
-    
-    }
-}
-renderProducts(productList)
