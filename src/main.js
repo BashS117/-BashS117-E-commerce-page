@@ -154,6 +154,7 @@ thumbNailContainer.forEach(thumbNailCont=>{
 })
 
 let Amount=0;
+amountItem.innerHTML=Amount;
 
 iconMenu.addEventListener("click", openMobileMenu);
 iconClose.addEventListener("click", closeMobileMenu);
@@ -208,7 +209,6 @@ function addtoCart(){
 
   }   
 }
-
 function plussAmount(){
     Amount++;
     amountItem.innerHTML=""+Amount;
