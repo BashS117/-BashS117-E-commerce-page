@@ -349,6 +349,7 @@ border-radius: 5px;
   margin-bottom: 18px;
   line-height: 1.6;
   width: 422px;
+  color: var(--Dark-grayish-blue);
 }
 .final-price{
   display: flex;
@@ -439,7 +440,7 @@ border-radius: 5px;
   @media (max-width: 375px) {
     body{
       padding:0px;
-      width: 375px;
+      width: 1vh;
       
     }
     nav{
@@ -520,6 +521,7 @@ border-radius: 5px;
     .product-description{
       margin: 0;
       padding-inline:15px;
+      width: fit-content;
 
     }
     .product-description h1{
